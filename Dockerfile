@@ -47,6 +47,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 USER $PRESTO_USER
 
-COPY hadoop-aws-3.1.0.jar /presto/plugin/hive-hadoop2
+COPY hadoop-aws-3.1.0.jar /presto/plugin/hive-hadoop2/
+COPY json-serde-1.3.8-jar-with-dependencies.jar json-udf-1.3.8-jar-with-dependencies.jar /presto/plugin/hive-hadoop2/
 
 CMD ["launcher", "run"]
